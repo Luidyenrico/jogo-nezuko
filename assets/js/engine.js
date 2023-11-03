@@ -6,12 +6,15 @@ const state = {
         score: document.querySelector("#score"),
     },
     values: {
-        timerId: null,
-        countDownTimerId: setInterval(countDown, 1000),
+        
         gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
-        currentTime: 60,
+        currentTime: 10,
+    },
+    actions: {
+        timerId: setInterval(randomSquare, 500),
+        countDownTimerId: setInterval(countDown, 1000),
     }
 }
 
@@ -20,7 +23,10 @@ function countDown() {
     state.view.timeLeft.textContent = state.values.currentTime;
 
     if(state.values.currentTime <= 0) {
-        alert("Game Over! O seu resultado foi: " + state.values.result)
+        alert("O TEMPO ACABOU!\n O seu resultado foi: " + state.values.result)
+        clearInterval(state.actions.countDownTimerId)
+        clearInterval(state.actions,timerId)
+        state.values.result = 0
     }
 }
 
@@ -35,9 +41,6 @@ function randomSquare(){
     state.values.hitPosition = randomSquare.id;
 }
 
-function moveEnemy() {
-    state.values.timerId = setInterval(randomSquare, state.values.gameVelocity)
-}
 
 function addListenerHitbox() {
     state.view.squares.forEach((square) => {
@@ -52,7 +55,6 @@ function addListenerHitbox() {
 }
 
 function initialize() {
-    moveEnemy();
     addListenerHitbox();
 }
 
