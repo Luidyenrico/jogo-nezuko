@@ -10,7 +10,7 @@ const state = {
         gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
-        currentTime: 10,
+        currentTime: 30,
     },
     actions: {
         timerId: setInterval(randomSquare, 500),
@@ -19,14 +19,15 @@ const state = {
 }
 
 function countDown() {
-    state.values.currentTime--;
-    state.view.timeLeft.textContent = state.values.currentTime;
-
-    if(state.values.currentTime <= 0) {
-        alert("O TEMPO ACABOU!\n O seu resultado foi: " + state.values.result)
-        clearInterval(state.actions.countDownTimerId)
-        clearInterval(state.actions,timerId)
-        state.values.result = 0
+    if (state.values.currentTime < 1) {
+        alert("O TEMPO ACABOU!\nO seu resultado foi: " + state.values.result);
+        clearInterval(state.actions.countDownTimerId);
+        clearInterval(state.actions.timerId);
+        window.location.reload();
+        state.values.result = 0;
+    } else {
+        state.values.currentTime--;
+        state.view.timeLeft.textContent = state.values.currentTime;
     }
 }
 
@@ -39,6 +40,7 @@ function randomSquare(){
     let randomSquare = state.view.squares[randomNumber];
     randomSquare.classList.add("enemy");
     state.values.hitPosition = randomSquare.id;
+
 }
 
 
@@ -55,6 +57,7 @@ function addListenerHitbox() {
 }
 
 function initialize() {
+    alert("Clique em OK para iniciar o jogo.")
     addListenerHitbox();
 }
 
