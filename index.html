@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <!-- Configurações gerais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <link rel="shortcut icon" href="./assets/imagens/favicon.ico" type="image/x-icon">
+    <title>Acerte a Nezuko</title>
+</head>
+
+<body>
+    <header class="container">
+            <section class="menu">
+                <div class="menu-time">
+                    <h2>Tempo restante</h2>
+                    <h3 id="time-left">0</h3>
+                </div>
+                <div class="menu-score">
+                    <h2>Sua pontuação</h2>
+                    <h3 id="score">0</h3>
+                </div>
+                <div class="menu-lives">
+                    <img src="./assets/imagens/coracao-32.png" alt="vidas">
+                    <p>x3</p>
+                </div>
+                
+            </section>
+    </header>
+
+    <main class="panel">                
+            <div class="panel-row">
+                <div class="square" id="primeiro"></div>
+                <div class="square" id="segundo"></div>
+                <div class="square" id="terceiro"></div>
+            </div>
+            
+            <div class="panel-row">
+                <div class="square" id="quarto"></div>
+                <div class="square" id="quinto"></div>
+                <div class="square" id="sexto"></div>
+            </div>
+            
+            <div class="panel-row">
+                <div class="square" id="setimo"></div>
+                <div class="square" id="oitavo"></div>
+                <div class="square" id="nono"></div>
+            </div>    
+    </main>
+        
+    <footer>
+        <p>Jogo criado por Luidy Enrico</p>
+        <a href="">GITHUB</a>
+    </footer>
+        
+        
+
+    <script defer src="./assets/js/engine.js"></script>
+</body>
+
+</html>
