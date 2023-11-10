@@ -36,10 +36,10 @@ h3 {
     height: 88vh;
 }
 
-div#primeiro {border-radius: 20px 0px 0px 0px;}
-div#terceiro {border-radius: 0px 0px 0px 20px;}
-div#setimo {border-radius: 0px 20px 0px 0px;}
-div#nono {border-radius: 0px 0px 20px 0px;}
+div#_1 {border-radius: 20px 0px 0px 0px;}
+div#_3 {border-radius: 0px 0px 0px 20px;}
+div#_7 {border-radius: 0px 20px 0px 0px;}
+div#_9 {border-radius: 0px 0px 20px 0px;}
 
 .square {
     height: 150px;
